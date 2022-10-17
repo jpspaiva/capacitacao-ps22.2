@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Eventos</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="{% static 'imagens/Logo-RocketEventos.png' %}"
+</head>
+<body>
+    <section class="navBar">
+        <nav class="container"> 
+            <div class="menu-esquerda">
+                <a href="#"><img src="{{ inicio.image.url }}" alt="logo-rocket-eventos"></a>
+                <div class="botao">
+                    <button type="button" id="botao-menu">
+                        <img src="{% static 'imagens/hamburger-menu.svg'%}" alt="">
+                    </button>
+                </div>
+            </div>
+            <ul class="menu-direita navlinks">
+                <li><a href="#home" class="navlink ativado">HOME</a></li>
+                <li><a href="#sobre" class="navlink">SOBRE</a></li>
+                <li><a href="#servicos" class="navlink">SERVIÇOS</a></li>
+                <li><a href="#portfolio" class="navlink">PORTFÓLIO</a></li>
+                <li><a href="#contato" class="navlink">CONTATO</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="header" id="home">
+        <header class="container">
+            <h1>{{inicio.titulo1}}<br>{{inicio.titulo2}}</h1>
+            <h3>{{inicio.descricao1}}<br>{{inicio.descricao2}}</h3>
+
+            <a href="#orcamento">
+                <button type="button">{{inicio.text_button}}</button>
+            </a>
+        </header>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="conteudo">
+                <h2>Sobre a <span>rocket</span></h2>
+                <p>
+                    {{quemsomos.descricao1}}
+                    <br><br>
+                    
+                    {{quemsomos.descricao2}}
+                </p>
+            </div>
+            <div class="imagem-sobre">
+                <img src="{{ quemsomos.image.url }}" alt="somos a rocket eventos">   
+            </div>
+        </div>
+    </section>
+
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <h2>Nossos serviços</h2>
+
+            <div class="rows">
+                <div class="row">
+                    <div class="card">
+                        <div class="icone">
+                            <img src="{% static 'imagens/decoracao.svg' %}" alt="">
+                        </div>
+                        <div class="texto">
+                            <h3>Decoração</h3>
+                            <p>{{servicos.descricao1}}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icone">
+                            <img src="{% static 'imagens/seguranca.svg' %}" alt="">
+                        </div>
+                        <div class="texto">
+                            <h3>Segurança</h3>
+                            <p>{{servicos.descricao2}}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icone">
+                            <img src="{% static 'imagens/logistica.svg' %}" alt="">
+                        </div>
+                        <div class="texto">
+                            <h3>Logistica</h3>
+                            <p>{{servicos.descricao3}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="icone">
+                            <img src="{% static 'imagens/comercialização.svg' %}" alt="">
+                        </div>
+                        <div class="texto">
+                            <h3>Comercialização</h3>
+                            <p>{{servicos.descricao4}}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icone">
+                            <img src="{% static 'imagens/planejamento.svg' %}" alt="">
+                        </div>
+                        <div class="texto">
+                            <h3>Planejamento</h3>
+                            <p>{{servicos.descricao5}}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icone">
+                            <img src="{% static 'imagens/infraestrutura.svg' %}" alt="">
+                        </div>
+                        <div class="texto">
+                            <h3>Infraestrutura</h3>
+                            <p>{{servicos.descricao6}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+
+            <div class="depoimentos">
+                <div class="botao">
+                    <div class="anterior"></div>
+                </div>
+
+                <div class="carrossel">
+                    <div class="item mostrar">
+                        <p>"{{portfolio.comentario1}}"</p>
+                        <p class="autor"><span>{{portfolio.autor1}}</span>, CEO Natal Shopping</p>
+                    </div>
+                    <div class="item esconder">
+                        <p>"{{portfolio.comentario2}}"</p>
+                        <p class="autor"><span>{{portfolio.autor2}}</span>, SRO MidWay Mall</p>
+                    </div>
+                    <div class="item esconder">
+                        <p>"{{portfolio.comentario3}}"</p>
+                        <p class="autor"><span>{{portfolio.autor3}}</span>, CEO Praia Shopping</p>
+                    </div>
+                    <div class="item esconder">
+                        <p>"{{portfolio.comentario4}}"</p>
+                        <p class="autor"><span>{{portfolio.autor4}}</span>, SRO Norte Shopping</p>
+                    </div>
+                </div>
+
+                <div class="botao">
+                    <div class="proximo"></div>
+                </div>
+            </div>
+
+            <div class="galeria">
+                <div class="item">
+                    <img src="{{ portfolio.image1.url }}" alt="imagem 1">
+                </div>
+                <div class="item">
+                    <img src="{{ portfolio.image2.url }}" alt="imagem 2">
+                </div>
+                <div class="item">
+                    <img src="{{ portfolio.image3.url }}" alt="imagem 3">
+                </div>
+                <div class="item">
+                    <img src="{{ portfolio.image4.url }}" alt="imagem 4">
+                </div>
+                <div class="item">
+                    <img src="{{ portfolio.image5.url }}" alt="imagem 5">
+                </div>
+                <div class="item">
+                    <img src="{{ portfolio.image6.url }}" alt="imagem 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contato" id="contato">
+        <div class="container">
+            <div class="informacao-contato">
+                <h2>Entre em contato</h2>
+                <p>Já estamos ansiosos para te atender!</p>
+
+                <ul>
+                    <li class="item">
+                        <div class="icone">
+                            <img src="{% static 'imagens/whatsapp.svg' %}" alt="">
+                        </div>
+                        <div class="informacao-conteudo">
+                            <h4>Whatsapp</h4>
+                            <p>{{contato.whatsapp}}</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="icone">
+                            <img src="{% static 'imagens/instagram.svg' %}" alt="">
+                        </div>
+                        <div class="informacao-conteudo">
+                            <h4>Instagram</h4>
+                            <p>{{contato.instagram}}</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="icone">
+                            <img src="{% static 'imagens/email.svg' %}" alt="">
+                        </div>
+                        <div class="informacao-conteudo">
+                            <h4>E-mail</h4>
+                            <p>{{contato.email}}</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="icone">
+                            <img src="{% static 'imagens/localização.svg' %}" alt="">
+                        </div>
+                        <div class="informacao-conteudo">
+                            <h4>Localização</h4>
+                            <p>{{contato.localizacao}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="formulario" id="orcamento">
+                <h2>ou solicite um orçamento!</h2>
+                <form method="POST"> {% csrf_token %}
+                    <label for="nome">Nome</label>
+                    <input type="nome" name="nome" id="nome"placeholder="Rocket Eventos">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email"placeholder="rocket@eventos.com">
+                    
+                    <label for="whatsapp">Whatsapp</label>
+                    <input type="whatsapp" name="whatsapp" id="whatsapp" placeholder="(84) 98112-1195">
+                    
+                    <label for="mensagem">Mensagem</label>
+                    <input type="mensagem" name="mensagem" id="mensagem" placeholder="Coloque sua mensagem aqui:">
+
+                    <div class="box">
+                        <div class="recaptcha">
+                            <input type="checkbox" id="noBot">
+                            <label for="noBot">Não sou um robô</label>
+                        </div>
+                        <div class="botao">
+                            <input type="submit" value="ENVIAR">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer class="container">
+            <span>Rocket Eventos © EJECT, 2022.1</span>
+        </footer>
+    </section>
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
